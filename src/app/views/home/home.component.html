@@ -1,1 +1,25 @@
-<p>home works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Devices Manager</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-tab-group class="mat-tab-group" mat-align-tabs="center">
+  <mat-tab class="mat-tab" label="Categories">
+    <mat-card>
+      <app-list></app-list>
+    </mat-card>
+  </mat-tab>
+
+  <mat-tab label="Devices">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a category</mat-label>
+      <mat-select value="selected">
+        <mat-option>None</mat-option>
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2">Option 2</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-tab>
+</mat-tab-group>

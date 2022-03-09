@@ -1,0 +1,9 @@
+.mat-tab-group {
+  /* margin-top: 25px;
+  margin-bottom: 48px; */
+  margin: 40px 20%;
+}
+
+.mat-tab {
+  background-color: aqua;
+}

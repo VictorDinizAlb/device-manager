@@ -1,0 +1,9 @@
+.mat-list-item {
+  justify-content: space-between;
+}
+.mat-toolbar-row {
+  font-size: 1.5em;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,9 @@
+<mat-list role="list">
+  <ng-container *ngFor="let category of categories">
+    <mat-toolbar-row class="mat-toolbar-row">
+      {{category.name}}
+      <span class="example-spacer"></span>
+      <mat-icon>verified_user</mat-icon>
+    </mat-toolbar-row>
+  </ng-container>
+</mat-list>
