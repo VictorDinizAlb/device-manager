@@ -3,6 +3,11 @@
 }
 .mat-toolbar-row {
   font-size: 1.5em;
+  border-bottom: 1px solid #00001130;
+}
+
+.mat-toolbar-row:hover {
+  background-color: #cecedb6c;
 }
 .example-spacer {
   flex: 1 1 auto;

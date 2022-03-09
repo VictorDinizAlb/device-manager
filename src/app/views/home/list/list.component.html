@@ -3,7 +3,9 @@
     <mat-toolbar-row class="mat-toolbar-row">
       {{category.name}}
       <span class="example-spacer"></span>
-      <mat-icon>verified_user</mat-icon>
+      <button mat-icon-button aria-label="Delete category">
+        <mat-icon (click)="deleteCategory(category.id)">delete</mat-icon>
+      </button>
     </mat-toolbar-row>
   </ng-container>
 </mat-list>

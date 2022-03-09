@@ -22,7 +22,11 @@ export class ListComponent implements OnInit {
   getCategories() {
     this.categoryService.getCategories().subscribe(resultado => {
       this.categories = resultado;
+      this.getCategories();
     });
+  }
 
+  deleteCategory(id: number){
+    this.categoryService.deleteCategory(id)
   }
 }

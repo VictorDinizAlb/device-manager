@@ -1,0 +1,14 @@
+<form class="example-form" [formGroup]="categoryForm">
+  <mat-form-field class="input-category" appearance="fill">
+    <mat-label>Message</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      name="name"
+      #message
+      maxlength="128"
+      placeholder="Category">
+    <mat-hint align="end">{{message.value.length}} / 128</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="createCategory()">Primary</button>
+</form>
