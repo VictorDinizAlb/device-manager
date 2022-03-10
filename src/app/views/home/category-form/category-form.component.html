@@ -1,6 +1,6 @@
-<form class="example-form" [formGroup]="categoryForm">
+<form class="form" [formGroup]="categoryForm">
   <mat-form-field class="input-category" appearance="fill">
-    <mat-label>Message</mat-label>
+    <mat-label>Category</mat-label>
     <input
       matInput
       formControlName="name"
@@ -8,7 +8,12 @@
       #message
       maxlength="128"
       placeholder="Category">
-    <mat-hint align="end">{{message.value.length}} / 128</mat-hint>
+    <mat-hint align="end"> {{message.value.length}} / 128 </mat-hint>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="createCategory()">Primary</button>
+  <button mat-raised-button
+   color="primary"
+   (click)="createCategory()"
+   class="btn-input">
+      Primary
+  </button>
 </form>

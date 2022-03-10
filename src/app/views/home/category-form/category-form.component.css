@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-category {
+  min-width: 140px;
+  width: 60%;
+  max-width: 395px;
+}
+
+.btn-input {
+  height: 55px;
+}

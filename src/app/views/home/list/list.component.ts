@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/shared/model/category.model';
 import { CategoryService } from 'src/app/shared/service/category.service';
 
@@ -27,6 +27,9 @@ export class ListComponent implements OnInit {
   }
 
   deleteCategory(id: number){
-    this.categoryService.deleteCategory(id)
+    this.categoryService.deleteCategory(id).subscribe();
+    console.log("Chegou ", id)
+    // this.getCategories();
   }
+
 }

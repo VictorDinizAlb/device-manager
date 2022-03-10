@@ -4,11 +4,18 @@
 .mat-toolbar-row {
   font-size: 1.5em;
   border-bottom: 1px solid #00001130;
+  display: flex;
+  justify-content: space-between;
 }
 
-.mat-toolbar-row:hover {
+/* .mat-toolbar-row:hover {
   background-color: #cecedb6c;
-}
+} */
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.btn-input {
+  background-color: rgb(220, 57, 57);
+  color: #fff;
 }

@@ -26,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     ListComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
   ],
   imports: [
     HttpClientModule,

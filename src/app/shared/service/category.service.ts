@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Category } from '../model/category.model';
 
 @Injectable({
@@ -9,16 +10,17 @@ import { Category } from '../model/category.model';
 export class CategoryService {
 
   // ========= Api localhost ===========
-  apiUrl = 'http://localhost:3000/category';
+  // private readonly apiUrl = `${environment.apiLocal}category`
 
   // ========== Api RDS AWS ===========
-  // apiUrl = 'http://18.231.183.53:3000/category';
+  private readonly apiUrl = `${environment.apiRDS}category`
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
     })
-  }
+};
+
 
   constructor(
     private httpClient: HttpClient
@@ -34,9 +36,8 @@ export class CategoryService {
     return this.httpClient.post<Category>(this.apiUrl, category, this.httpOptions)
   }
 
-  public deleteCategory(id: any){
-    this.httpClient.delete(this.apiUrl + "/delete/".concat(id))
-    console.log(this.apiUrl + "/delete/" + id)
-    // window.location.reload();
+  public deleteCategory(id: any) {
+    const url = `${this.apiUrl}/delete/${id}`;
+    return this.httpClient.delete(url);
   }
 }

@@ -28,10 +28,12 @@ export class CategoryFormComponent implements OnInit {
     })
   }
 
-  createCategory(){
-    this.rest.postCategory(this.categoryForm.value).subscribe();
-    this.categoryForm.reset();
-    window.location.reload();
+  createCategory() {
+    // if (this.categoryForm.value.name !== null) {
+      this.rest.postCategory(this.categoryForm.value).subscribe();
+      this.categoryForm.reset();
+      // window.location.reload();
+    // }
   }
 
 }
