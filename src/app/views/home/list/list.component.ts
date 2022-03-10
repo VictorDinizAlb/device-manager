@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/shared/model/category.model';
 import { CategoryService } from 'src/app/shared/service/category.service';
 
@@ -9,27 +9,23 @@ import { CategoryService } from 'src/app/shared/service/category.service';
 })
 export class ListComponent implements OnInit {
 
-  categories?: Category[];
+  @Input() categories?: Category[];
 
   constructor(
     public categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
-    this.getCategories();
-  }
 
-  getCategories() {
-    this.categoryService.getCategories().subscribe(resultado => {
-      this.categories = resultado;
-      this.getCategories();
-    });
   }
 
   deleteCategory(id: number){
     this.categoryService.deleteCategory(id).subscribe();
     console.log("Chegou ", id)
-    // this.getCategories();
+   }
+
+  trackByFn(index: number, item: Category): number {
+    return item.id;
   }
 
 }

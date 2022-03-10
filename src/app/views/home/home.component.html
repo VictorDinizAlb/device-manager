@@ -8,19 +8,21 @@
   <mat-tab class="mat-tab" label="Categories">
     <mat-card>
       <app-category-form></app-category-form>
-      <app-list></app-list>
+      <app-list [categories]="categories"></app-list>
     </mat-card>
   </mat-tab>
 
   <mat-tab label="Devices">
-    <mat-form-field appearance="fill">
-      <mat-label>Choose a category</mat-label>
-      <mat-select value="selected">
-        <mat-option>None</mat-option>
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <mat-card class="devices-container">
+        <app-form-field [categories]="categories"></app-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          class="btn-imput"
+          (click)="testeAdd()">
+          <mat-icon>add</mat-icon>
+        </button>
+    </mat-card>
+    <app-table-devices></app-table-devices>
   </mat-tab>
 </mat-tab-group>

@@ -1,13 +1,16 @@
 .mat-tab-group {
-  /* margin-top: 25px;
-  margin-bottom: 48px; */
   margin: 40px 20%;
-}
-
-.mat-tab {
-  background-color: aqua;
 }
 
 .input-category {
   width: 50%;
+}
+
+.devices-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-imput {
+  height: 55px;
 }

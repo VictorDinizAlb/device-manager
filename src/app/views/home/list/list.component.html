@@ -1,12 +1,11 @@
 <mat-list role="list">
   <ng-container>
-    <mat-toolbar-row class="mat-toolbar-row"  *ngFor="let category of categories">
+    <mat-toolbar-row class="mat-toolbar-row"  *ngFor="let category of categories; index as i; trackBy: trackByFn">
       {{category.name}}
-      <!-- <span class="example-spacer"></span> -->
       <button mat-raised-button (click)="deleteCategory(category.id)" class="btn-input">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-toolbar-row>
   </ng-container>
 </mat-list>
-<!-- <mat-icon (click)="deleteCategory(4)">delete</mat-icon> -->
+

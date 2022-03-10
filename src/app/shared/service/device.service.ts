@@ -2,18 +2,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Category } from '../model/category.model';
+import { Device } from '../model/device.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class DeviceService {
 
   // ========= Api localhost ===========
-  // private readonly apiUrl = `${environment.apiLocal}category`
+  // private readonly apiUrl = `${environment.apiLocal}device`
 
   // ========== Api RDS AWS ===========
-  private readonly apiUrl = `${environment.apiRDS}category`
+  private readonly apiUrl = `${environment.apiRDS}device`
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,17 +25,17 @@ export class CategoryService {
     private httpClient: HttpClient
   ) { }
 
-  public getCategories(): Observable<Category[]>{
-    const categories = this.httpClient.get<Category[]>(this.apiUrl)
-    return categories;
+  public getDevices(): Observable<Device[]>{
+    const devices = this.httpClient.get<Device[]>(this.apiUrl)
+    return devices;
   }
 
-  public postCategory(category: Category): Observable<Category>{
+  public postDevice(device: Device): Observable<Device>{
 
-    return this.httpClient.post<Category>(this.apiUrl, category, this.httpOptions)
+    return this.httpClient.post<Device>(this.apiUrl, device, this.httpOptions)
   }
 
-  public deleteCategory(id: any) {
+  public deleteDevice(id: any) {
     const url = `${this.apiUrl}/delete/${id}`;
     return this.httpClient.delete(url);
   }
