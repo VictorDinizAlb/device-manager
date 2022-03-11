@@ -7,9 +7,12 @@
 <mat-tab-group class="mat-tab-group" mat-align-tabs="center">
   <mat-tab label="Devices">
     <mat-card class="devices-container">
-      <app-form-field [categories]="categories"></app-form-field>
+
+      <!-- --- Filtro por categoria (ainda não funciona) --- -->
+      <!-- <app-form-field [categories]="categories"></app-form-field> -->
+
       <button mat-raised-button color="primary" class="btn-imput" (click)="openDialog()">
-        <mat-icon>add</mat-icon>
+        <mat-icon>add</mat-icon> Device
       </button>
     </mat-card>
     <app-table-devices></app-table-devices>
