@@ -15,10 +15,7 @@ export class CategoryFormComponent implements OnInit {
     private fb: FormBuilder,
     private rest: CategoryService
   ) {
-    this.categoryForm = this.fb.group({
-      name: ['', [Validators.required]],
-      devices: [[]]
-    })
+    this.categoryForm = this.fb.group({})
    }
 
   ngOnInit(): void {
@@ -29,8 +26,10 @@ export class CategoryFormComponent implements OnInit {
   }
 
   createCategory() {
-      this.rest.postCategory(this.categoryForm.value).subscribe();
-      this.categoryForm.reset();
+    this.rest.postCategory(this.categoryForm.value).subscribe(() => {
+      window.location.reload();
+    });
+    this.categoryForm.reset();
   }
 
 }

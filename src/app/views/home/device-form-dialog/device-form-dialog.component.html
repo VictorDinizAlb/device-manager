@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Creating a new device</h1>
+<div mat-dialog-content class="dialogForm">
+  <form action="" [formGroup]="deviceForm">
+    <div class="dialogForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Color</mat-label>
+        <input maxlength="16" matInput #color formControlName="color" name="color">
+        <mat-hint align="end"> {{color.value.length}} / 16 </mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Part Number</mat-label>
+        <input type="number" matInput formControlName="partNumber" name="partNumber">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select a category</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" formControlName="categoryId" name="categoryId">
+          <mat-option *ngFor="let category of categories; index as i; trackBy: trackByFn" [value]="category.id">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="warn">Cancel</button>
+  <button mat-button (click)="createDevice()"  cdkFocusInitial>Save</button>
+</div>

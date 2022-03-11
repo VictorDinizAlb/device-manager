@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+  padding-right: -40px;
+}
+
+.btn-input {
+  background-color: rgb(220, 57, 57);
+  color: #fff;
+}

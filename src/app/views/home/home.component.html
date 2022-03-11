@@ -5,24 +5,19 @@
 </mat-toolbar>
 
 <mat-tab-group class="mat-tab-group" mat-align-tabs="center">
+  <mat-tab label="Devices">
+    <mat-card class="devices-container">
+      <app-form-field [categories]="categories"></app-form-field>
+      <button mat-raised-button color="primary" class="btn-imput" (click)="openDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card>
+    <app-table-devices></app-table-devices>
+  </mat-tab>
   <mat-tab class="mat-tab" label="Categories">
     <mat-card>
       <app-category-form></app-category-form>
       <app-list [categories]="categories"></app-list>
     </mat-card>
-  </mat-tab>
-
-  <mat-tab label="Devices">
-    <mat-card class="devices-container">
-        <app-form-field [categories]="categories"></app-form-field>
-        <button
-          mat-raised-button
-          color="primary"
-          class="btn-imput"
-          (click)="testeAdd()">
-          <mat-icon>add</mat-icon>
-        </button>
-    </mat-card>
-    <app-table-devices></app-table-devices>
   </mat-tab>
 </mat-tab-group>

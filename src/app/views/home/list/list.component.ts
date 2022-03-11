@@ -20,8 +20,10 @@ export class ListComponent implements OnInit {
   }
 
   deleteCategory(id: number){
-    this.categoryService.deleteCategory(id).subscribe();
-    console.log("Chegou ", id)
+    this.categoryService.deleteCategory(id).subscribe(() => {
+      window.location.reload();
+    });
+
    }
 
   trackByFn(index: number, item: Category): number {

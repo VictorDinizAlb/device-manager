@@ -22,6 +22,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from './views/home/form-field/form-field.component';
 import { TableDevicesComponent } from './views/home/table-devices/table-devices.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeviceFormDialogComponent } from './views/home/device-form-dialog/device-form-dialog.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { TableDevicesComponent } from './views/home/table-devices/table-devices.
     CategoryFormComponent,
     FormFieldComponent,
     TableDevicesComponent,
+    DeviceFormDialogComponent,
   ],
   imports: [
     HttpClientModule,
@@ -48,6 +52,8 @@ import { TableDevicesComponent } from './views/home/table-devices/table-devices.
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent]

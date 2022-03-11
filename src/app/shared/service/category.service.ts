@@ -31,7 +31,6 @@ export class CategoryService {
   }
 
   public postCategory(category: Category): Observable<Category>{
-
     return this.httpClient.post<Category>(this.apiUrl, category, this.httpOptions)
   }
 
