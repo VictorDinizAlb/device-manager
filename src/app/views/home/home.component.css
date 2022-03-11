@@ -14,3 +14,9 @@
 .btn-imput {
   height: 55px;
 }
+
+@media (max-width: 600px) {
+  .mat-tab-group {
+    margin: 20px 5%;
+  }
+}

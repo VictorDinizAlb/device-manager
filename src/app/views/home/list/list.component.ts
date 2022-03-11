@@ -26,6 +26,8 @@ export class ListComponent implements OnInit {
 
    }
 
+  // Usando apenas o *ngFor o botão da lista estava bugado e só funcionava depois
+  // de múltiplos clicks, essa função resolveu o problema.
   trackByFn(index: number, item: Category): number {
     return item.id;
   }

@@ -31,7 +31,6 @@ export class DeviceService {
   }
 
   public postDevice(device: Device): Observable<Device>{
-    // console.log(device);
     return this.httpClient.post<Device>(this.apiUrl, device, this.httpOptions)
   }
 

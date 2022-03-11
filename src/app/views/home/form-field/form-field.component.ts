@@ -7,6 +7,10 @@ import { Category } from 'src/app/shared/model/category.model';
   templateUrl: './form-field.component.html',
   styleUrls: ['./form-field.component.css']
 })
+
+// Compomente que gera um select para filtrar os Devices por categorias
+// Ainda não funciona, logo não está em uso
+
 export class FormFieldComponent implements OnInit {
 
   @Input() categories?: Category[];
@@ -23,7 +27,7 @@ export class FormFieldComponent implements OnInit {
     })
   }
 
-
+  // Função que desbuga click select
   trackByFn(index: number, item: Category): number {
     return item.id;
   }

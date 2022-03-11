@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -15,6 +15,8 @@ export class DeviceFormDialogComponent implements OnInit {
   public selectedCategory: Number = 0;
   public deviceForm: FormGroup;
 
+  // @Input() pattern: string | RegExp = '[a-zA-Z]*'
+
   constructor(
     private fb: FormBuilder,
     private rest: DeviceService,
@@ -26,7 +28,7 @@ export class DeviceFormDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.deviceForm = this.fb.group({
-      color: ['', [Validators.required]],
+      color: ['', [Validators.pattern('[a-z]')]],
       partNumber: ['', [Validators.required]],
       categoryId: ['', [Validators.required]]
     })
