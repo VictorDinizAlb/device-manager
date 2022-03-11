@@ -26,7 +26,9 @@ export class TableDevicesComponent implements OnInit {
 
   remove(id: number) {
     console.log("delete: ", id)
-    this.deviceService.deleteDevice(id).subscribe()
+    this.deviceService.deleteDevice(id).subscribe(() => {
+      window.location.reload();
+    })
   }
 
 
